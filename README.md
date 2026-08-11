@@ -17,3 +17,4 @@ environment variables over configuration files [https://12factor.net](https://12
 This variable is necessary to generate secure password hashes, sign cookies and so on.
 
 # Usage
+to be done
