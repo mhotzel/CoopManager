@@ -1,0 +1,67 @@
+/* ==========================================================================
+   0. FARB-VARIABLEN (CORPORATE PALETTE)
+   ========================================================================== */
+:root {
+    /* --- BRAND CORE --- */
+    --primary-color: #003056;
+    /* Deep Navy (Primärfarbe für Buttons, Outlines, Kopf etc.) */
+    --primary-rgb: 0, 48, 86;
+    /* Für Glas-Effekte/Schatten */
+    --primary-hover: #001F38;
+    /* dunklere Variante von primary */
+
+    --secondary-color: #BE2341;
+    /* Abstufung 1 (mittleres Grau) */
+    --secondary-hover: #404040;
+    /* dunklere Variante von secondary */
+    --primary-light-hover: #E6EDF3;
+    /* Sehr helles Blau für Tabellen-Hover */
+
+    /* --- BACKGROUNDS & SURFACES --- */
+    --bg-app: #FFFFFF;
+    /* Hintergrund weiß */
+    --bg-sidebar: #F2F2F2;
+    /* Hintergrund grau (Schema) */
+    --bg-nav-item: #d7d7d7;
+    --bg-nav-hover: #DDDDDD;
+    --bg-action-bar: #F2F2F2;
+    --bg-card-header: #EEEEEE;
+    --bg-table-even: #FAFAFA;
+    --bg-secondary-hover: #D4D4D4;
+    /* Hover für graue Buttons */
+
+    /* --- TYPOGRAPHY (Blaustich beibehalten) --- */
+    --text-main: #262626;
+    /* Textfarbe Primär (Schema) */
+    --text-dark: #1A1A1A;
+    /* Überschriften / Kontrast */
+    --text-muted: #667885;
+    /* Nebentexte */
+    --text-label: #4A5A66;
+    /* Formular-Labels */
+    --text-light: #52595F;
+    /* Footnote-Texte */
+    --text-white: #FFFFFF;
+    /* Textfarbe Sekundär (dunkler Hintergrund) */
+
+    /* --- BORDERS --- */
+    --border-color: #D1D9E0;
+    --border-subtle: #E1E8ED;
+    --border-table: #EEF2F5;
+
+    /* --- STATUS (unverändert) --- */
+    --info-color: #00a3e0;
+    /* Cyan für Info */
+    --info-bg: #e6f6fd;
+    --info-text: #00567a;
+
+    --warning-color: #f7a600;
+    /* Business Gold/Orange */
+    --warning-bg: #fff8e6;
+    --warning-text: #8a5d00;
+
+    --error-color: #e30613;
+    /* Klarer Warn-Rotton */
+    --error-bg: #fde6e7;
+    --error-text: #a0040d;
+}

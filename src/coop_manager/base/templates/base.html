@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			{% block title %}Title
+			{% endblock %}
+		</title>
+		<link rel="stylesheet" href="{{ url_for('base.static', filename='css/style.css') }}">
+		<link rel="stylesheet" href="{{ url_for('base.static', filename='css/colorscheme-business.css') }}">
+		<script src="{{ url_for('base.static', filename='js/layout.js') }}" defer></script>
+	</head>
+	<body>
+		<div id="app">
+			<header>
+				<div class="logo-container">
+					<img src="{{ url_for('base.static', filename='img/dlslogo.png') }}" alt="Dorfladen Schlichten Logo">
+				</div>
+
+				<div class="header-title">
+					DORFLADEN SCHLICHTEN
+				</div>
+			</header>
+			<div class="action-bar">
+				<div class="action-left">
+					<span class="badge">Sitzung: Aktiv</span>
+				</div>
+
+				<div class="action-right">
+					<button class="btn btn-primary">Anmelden / Abmelden</button>
+				</div>
+			</div>
+
+			<div id="content-wrapper">
+				<nav class="nav">
+					<details class="mobile-menu" open>
+						<summary>☰ Menü</summary>
+						<ul>
+							{% block nav %}
+							<li><a href="#" class="active">Startseite</a></li>
+							<li><a href="#">Benutzer</a></li>
+							<li><a href="#">Daten</a></li>
+							{% endblock %}
+						</ul>
+					</details>
+				</nav>
+
+				<main>
+					<div class="status-box info">
+						<p>Ein Text in der Statusbox INFO</p>
+					</div>
+					<div class="content">
+						{% block content %}Platzhalter{% endblock %}
+					</div>
+				</main>
+			</div>
+			<footer>
+			</footer>
+		</div>
+	</body>
+</html>
