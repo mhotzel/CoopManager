@@ -18,3 +18,32 @@ coop = "coop_manager.app:main"
 [build-system]
 requires = ["uv_build>=0.12.3,<0.13.0"]
 build-backend = "uv_build"
+
+# Development-only dependencies (not shipped in the published package).
+# Install/sync with: uv sync --group dev
+[dependency-groups]
+dev = [
+    "pipx>=1.16.6",
+    "pylint>=4.0.7",
+    "pylint-pytest>=1.1.8",
+    "pytest>=9",
+]
+
+# pylint-pytest 1.1.8 declares 'pytest<=8.2.0', which would pin the whole
+# project to an outdated pytest. The cap is only about the plugin's own test
+# suite, so it is overridden here to keep pytest 9.x.
+[tool.uv]
+override-dependencies = ["pytest>=9"]
+
+# pytest configuration.
+# Run the suite with: uv run pytest
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+# pylint configuration.
+# Run the linter with: uv run pylint src tests
+# The pylint_pytest plugin teaches pylint about pytest fixtures, so injected
+# fixture arguments no longer trigger redefined-outer-name (W0621).
+[tool.pylint.main]
+load-plugins = ["pylint_pytest"]

@@ -15,11 +15,13 @@
 		<div id="app">
 			<header>
 				<div class="logo-container">
-					<img src="{{ url_for('base.static', filename='img/dlslogo.png') }}" alt="Dorfladen Schlichten Logo">
+					<a href="{{ url_for('base.index') }}">
+						<img src="{{ url_for('base.static', filename='img/dlslogo.png') }}" alt="Dorfladen Schlichten Logo">
+					</a>
 				</div>
 
 				<div class="header-title">
-					DORFLADEN SCHLICHTEN
+					<p>{{ title | default('Anwendungsname', true) }}</p>
 				</div>
 			</header>
 			<div class="action-bar">
@@ -38,9 +40,9 @@
 						<summary>☰ Menü</summary>
 						<ul>
 							{% block nav %}
-							<li><a href="#" class="active">Startseite</a></li>
-							<li><a href="#">Benutzer</a></li>
-							<li><a href="#">Daten</a></li>
+								<li>
+									<a href="{{ url_for('base.index') }}" class="active">Startseite</a>
+								</li>
 							{% endblock %}
 						</ul>
 					</details>
@@ -48,15 +50,16 @@
 
 				<main>
 					<div class="status-box info">
-						<p>Ein Text in der Statusbox INFO</p>
+						{% block status %}
+						{% endblock %}
 					</div>
 					<div class="content">
-						{% block content %}Platzhalter{% endblock %}
+						{% block content %}Platzhalter
+						{% endblock %}
 					</div>
 				</main>
 			</div>
-			<footer>
-			</footer>
+			<footer></footer>
 		</div>
 	</body>
 </html>

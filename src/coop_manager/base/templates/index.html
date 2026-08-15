@@ -7,6 +7,6 @@ Mein Inhalt im Index
 {% endblock %}
 {% block nav %}
 	<li>
-		<a href="#" class="active">Startseite vom Index</a>
+		<a href="{{ url_for('base.index') }}" class="active">Startseite</a>
 	</li>
 {% endblock %}
